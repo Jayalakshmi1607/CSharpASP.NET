@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EIS.Models", "EIS.Models.csproj", "{F93A9E19-1CBD-4122-A8C2-99D2F9BF5B20}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EIS.MainApp", "..\EIS.MainApp\EIS.MainApp.csproj", "{F92D5AE1-1563-4403-A323-76967B27B382}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EIS.Repository", "..\EIS.Repository\EIS.Repository.csproj", "{9E7F2237-FB51-4EBF-A91C-245A2507E4C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{F93A9E19-1CBD-4122-A8C2-99D2F9BF5B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F93A9E19-1CBD-4122-A8C2-99D2F9BF5B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F93A9E19-1CBD-4122-A8C2-99D2F9BF5B20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F92D5AE1-1563-4403-A323-76967B27B382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F92D5AE1-1563-4403-A323-76967B27B382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F92D5AE1-1563-4403-A323-76967B27B382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F92D5AE1-1563-4403-A323-76967B27B382}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E7F2237-FB51-4EBF-A91C-245A2507E4C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E7F2237-FB51-4EBF-A91C-245A2507E4C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E7F2237-FB51-4EBF-A91C-245A2507E4C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E7F2237-FB51-4EBF-A91C-245A2507E4C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

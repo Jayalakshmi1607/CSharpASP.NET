@@ -15,6 +15,7 @@ namespace EIS.MainApp
     public partial class Form1 : Form
     {
         EmployeeRepo empRepo = new EmployeeRepo();
+        Employee emp = new Employee();
         public Form1()
         {
             InitializeComponent();
@@ -22,7 +23,6 @@ namespace EIS.MainApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Employee emp = new Employee();
             emp.ID = textBoxID.Text;
             emp.Name = textBoxName.Text;
             emp.Position = textBoxPosition.Text;
@@ -38,6 +38,25 @@ namespace EIS.MainApp
         {
             dataGridViewEmployee.DataSource = null;
             dataGridViewEmployee.DataSource = empRepo.GetAllEmployee();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            emp.ID = textBoxID.Text;
+            emp.Name = textBoxName.Text;
+            emp.Position = textBoxPosition.Text;
+            empRepo.UpdateEmployee(emp);
+            loadEmployees();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            emp.ID = textBoxID.Text;
+            emp.Name = textBoxName.Text;
+            emp.Position = textBoxPosition.Text;
+            empRepo.DeleteEmployee(emp);
+            loadEmployees();
         }
     }
 }

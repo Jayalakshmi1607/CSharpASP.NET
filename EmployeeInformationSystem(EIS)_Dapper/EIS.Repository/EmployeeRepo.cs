@@ -26,5 +26,13 @@ namespace EIS.Repository
         {
             return this.conn.Query<Employee>("GetAllEmployee", commandType: CommandType.StoredProcedure).ToList();
         }
+        public void UpdateEmployee(Employee emp)
+        {
+            this.conn.Execute("UpdateEmployee", emp,commandType:CommandType.StoredProcedure);
+        }
+        public void DeleteEmployee(Employee emp)
+        {
+            this.conn.Execute("DELETE FROM Employee WHERE ID=@ID", emp);
+        }
     }
 }
