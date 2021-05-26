@@ -20,7 +20,7 @@ namespace EIS.Repository
         }
         public void AddEmployee(Employee emp)
         {
-            this.conn.Execute("InsertEmployee", emp, commandType: CommandType.StoredProcedure);
+            conn.Execute("InsertEmployee", emp, commandType: CommandType.StoredProcedure);
         }
         public List<Employee>GetAllEmployee()
         {
