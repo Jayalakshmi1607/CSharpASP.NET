@@ -13,7 +13,7 @@ using Dapper;
 
 namespace EmployeeService.Controllers
 {
-    [BasicAuthentication]
+    [System.Web.Http.RoutePrefix("api/Employees")]
     public class EmployeesController:ApiController
     {
         string connectionString = "Server=LAPTOP-56JBDJD6;Database=master; User ID=hello;Password=world";
@@ -30,7 +30,7 @@ namespace EmployeeService.Controllers
             string passWord = this.conn.QuerySingle("SELECT Password FROM Users WHERE UserName=@UserName", new { username }).toString();
             return (username == userName && password == passWord);
         }
-        [RequireHttps]
+        [System.Web.Http.HttpGet, System.Web.Http.Route("")]
         public HttpResponseMessage Get()
         {
             string username = Thread.CurrentPrincipal.Identity.Name;
