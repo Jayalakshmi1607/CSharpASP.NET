@@ -58,5 +58,6 @@ namespace EIS.MainApp
             empRepo.DeleteEmployee(emp);
             loadEmployees();
         }
+
     }
 }

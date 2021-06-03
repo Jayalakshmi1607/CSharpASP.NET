@@ -161,6 +161,7 @@ namespace EIS.MainApp
             this.dataGridViewEmployee.RowTemplate.Height = 35;
             this.dataGridViewEmployee.Size = new System.Drawing.Size(615, 631);
             this.dataGridViewEmployee.TabIndex = 0;
+            this.dataGridViewEmployee.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployee_CellContentClick);
             // 
             // Form1
             // 

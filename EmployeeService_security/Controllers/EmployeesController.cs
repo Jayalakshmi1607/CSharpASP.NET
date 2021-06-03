@@ -31,7 +31,8 @@ namespace EmployeeService.Controllers
             return (username == userName && password == passWord);
         }
         [System.Web.Http.HttpGet, System.Web.Http.Route("")]
-        public HttpResponseMessage Get()
+        [BasicAuthentication]
+        public HttpResponseMessage Get(string gender="All")
         {
             string username = Thread.CurrentPrincipal.Identity.Name;
             switch(username)
