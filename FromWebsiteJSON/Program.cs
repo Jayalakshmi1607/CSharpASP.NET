@@ -22,22 +22,24 @@ namespace FromWebsiteJSON
             HttpResponseMessage response = await client.GetAsync("https://api.covid19india.org/travel_history.json");
             response.EnsureSuccessStatusCode();
             var resp = await response.Content.ReadAsStringAsync();
-            DataSet dataSet = JsonConvert.DeserializeObject<DataSet>(resp);
-            DataTable travelHistories = dataSet.Tables["travel_history"];
-            foreach (DataRow traveller in travelHistories.Rows)
+            /*DataSet dataSet = JsonConvert.DeserializeObject<DataSet>(resp);
+            DataTable travelHistories = dataSet.Tables["travel_history"];*/
+            List<Covid19TravelHistory> travelHistories = JsonConvert.DeserializeObject<List<Covid19TravelHistory>>(resp);
+
+            foreach (var traveller in travelHistories)
              {
-                 travelHistory._cn6ca = (string)traveller["_cn6ca"];
-                 travelHistory.accuracylocation =(string)traveller["accuracylocation"];
-                 travelHistory.address = (string)traveller["address"];
-                 travelHistory.datasource = (string)traveller["datasource"];
-                 travelHistory.latlong = (string)traveller["latlong"];
-                 travelHistory.modeoftravel = (string)traveller["modeoftravel"];
-                 travelHistory.pid = (string)traveller["pid"];
-                 travelHistory.placename = (string)traveller["placename"];
-                 travelHistory.timefrom = (string)traveller["timefrom"];
-                 travelHistory.timeto = (string)traveller["timeto"];
-                 travelHistory.type = (string)traveller["type"];
-                 travelHistoryRepo.AddEmployee(travelHistory);
+                 travelHistory._cn6ca = traveller._cn6ca;
+                 travelHistory.accuracylocation =traveller.accuracylocation;
+                 travelHistory.address = traveller.address;
+                 travelHistory.datasource = traveller.datasource;
+                 travelHistory.latlong = traveller.latlong;
+                 travelHistory.modeoftravel = traveller.modeoftravel;
+                 travelHistory.pid =traveller.pid;
+                 travelHistory.placename = traveller.placename;
+                 travelHistory.timefrom = traveller.timefrom;
+                 travelHistory.timeto =traveller.timeto;
+                 travelHistory.type = traveller.type;
+                 /*travelHistoryRepo.AddEmployee(travelHistory);*/
              }
         }
     }
