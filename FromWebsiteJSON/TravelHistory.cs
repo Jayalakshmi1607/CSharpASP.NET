@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FromWebsiteJSON
 {
-    class TravelHistory
+    public class TravelHistory
     {
         public string _cn6ca { get; set; }
         public string accuracylocation { get; set; }
