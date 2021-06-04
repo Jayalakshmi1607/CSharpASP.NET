@@ -40,7 +40,7 @@ namespace FromWebsiteJSON
                 travelHistory.address = traveller.address;
                 travelHistory.datasource = traveller.datasource;
                 travelHistory.latlong = traveller.latlong;
-                travelHistory.modeoftravel = traveller.modeoftravel;
+                travelHistory.modeoftravel = traveller.modeoftravel;    
                 travelHistory.pid = traveller.pid;
                 travelHistory.placename = traveller.placename;
                 travelHistory.timefrom = traveller.timefrom;
