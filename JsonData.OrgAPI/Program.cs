@@ -48,7 +48,7 @@ namespace JsonData.OrgAPI
                 dataOrgRepoObj.AddStateWise(stateWiseObj);
 
             }
-            /*foreach(var jsonTestedOrg in dataOrg.tested)
+            foreach(var jsonTestedOrg in dataOrg.tested)
             {
                 testedObj.dailyrtpcrsamplescollectedicmrapplication =
                     jsonTestedOrg.dailyrtpcrsamplescollectedicmrapplication;
@@ -89,7 +89,8 @@ namespace JsonData.OrgAPI
                 testedObj.updatetimestamp = jsonTestedOrg.updatetimestamp;
                 testedObj.years1stdose = jsonTestedOrg.years1stdose;
                 testedObj.years2nddose = jsonTestedOrg.years2nddose;
-            }*/
+                dataOrgRepoObj.AddTested(testedObj);
+            }
 
         }
     }

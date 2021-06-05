@@ -25,12 +25,7 @@ namespace FromWebsiteJSON
 
 
             HttpResponseMessage response = client.GetAsync("https://api.covid19india.org/travel_history.json").Result;
-            //response.EnsureSuccessStatusCode();
             var resp = response.Content.ReadAsStringAsync().Result;
-            /*DataSet dataSet = JsonConvert.DeserializeObject<DataSet>(resp);
-            DataTable travelHistories = dataSet.Tables["travel_history"];*/
-            //Covid19TravelHistory covidDetails = new Covid19TravelHistory();
-            //List<TravelHistory> travelHistoryTravel = new List<TravelHistory>();
             Covid19TravelHistory covidDetails = JsonConvert.DeserializeObject<Covid19TravelHistory>(resp);
             
             foreach (var traveller in covidDetails.travel)
@@ -46,7 +41,7 @@ namespace FromWebsiteJSON
                 travelHistory.timefrom = traveller.timefrom;
                 travelHistory.timeto = traveller.timeto;
                 travelHistory.type = traveller.type;
-                travelHistoryRepo.AddEmployee(travelHistory);
+                travelHistoryRepo.AddTraveller(travelHistory);
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace JsonData.OrgAPI
         public string over60years1stdose { get; set; }
         public string over60years2nddose { get; set; }
         public string positivecasesfromsamplesreported { get; set; }
+        [JsonProperty("registration18-45years")]
         public string registration18_45years {get; set; }
         public string registrationabove45years { get; set; }
         public string registrationflwhcw { get; set; }
@@ -32,7 +34,9 @@ namespace JsonData.OrgAPI
         public string source4 { get; set; }
         public string testedasof { get; set; }
         public string testsconductedbyprivatelabs { get; set; }
+        [JsonProperty("to60yearswithco-morbidities1stdose")]
         public string to60yearswithco_morbidities1stdose { get; set; }
+        [JsonProperty("to60yearswithco-morbidities2nddose")]
         public string to60yearswithco_morbidities2nddose { get; set; }
         public string totaldosesadministered { get; set; }
         public string totalindividualsregistered { get; set; }

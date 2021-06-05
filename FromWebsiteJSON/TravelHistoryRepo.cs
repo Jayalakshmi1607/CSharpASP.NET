@@ -12,7 +12,7 @@ namespace FromWebsiteJSON
         {
             conn = new SqlConnection(connectionString);
         }
-        public void AddEmployee(TravelHistory travelHistory)
+        public void AddTraveller(TravelHistory travelHistory)
         {
             conn.Execute("InsertData", travelHistory, commandType: CommandType.StoredProcedure);
         }
