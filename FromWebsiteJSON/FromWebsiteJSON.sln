@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FromWebsiteJSON", "FromWebsiteJSON.csproj", "{6004D86A-3059-43FA-8A8B-F0C06625A34D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonData.OrgAPI", "..\JsonData.OrgAPI\JsonData.OrgAPI.csproj", "{05EA4B96-F80B-43A9-A66E-0AD2D408FFE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonData.OrgAPI", "..\JsonData.OrgAPI\JsonData.OrgAPI.csproj", "{05EA4B96-F80B-43A9-A66E-0AD2D408FFE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonRawData.API", "..\JsonRawData.API\JsonRawData.API.csproj", "{A6DEEFC0-4298-480B-B29D-7400F6CF2283}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{05EA4B96-F80B-43A9-A66E-0AD2D408FFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05EA4B96-F80B-43A9-A66E-0AD2D408FFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05EA4B96-F80B-43A9-A66E-0AD2D408FFE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6DEEFC0-4298-480B-B29D-7400F6CF2283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6DEEFC0-4298-480B-B29D-7400F6CF2283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6DEEFC0-4298-480B-B29D-7400F6CF2283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6DEEFC0-4298-480B-B29D-7400F6CF2283}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
