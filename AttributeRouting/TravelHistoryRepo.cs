@@ -22,7 +22,9 @@ namespace AttributeRouting
         }
         public List<TravelHistory> GetTravelHistory()
         {
-            return this.conn.Query<TravelHistory>("SELECT*FROM TravelHistory").ToList();
+            
+            List<TravelHistory> list=this.conn.Query<TravelHistory>("SELECT*FROM TravelHistory").ToList();
+            return list;
         }
         public List<TravelHistory> GetTraveller(TravelHistory travelHistory)
         {
