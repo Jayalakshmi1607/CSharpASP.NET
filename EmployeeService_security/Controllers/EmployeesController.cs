@@ -13,7 +13,6 @@ using Dapper;
 
 namespace EmployeeService.Controllers
 {
-    //[EnableCorsAttribute("*","*","*")]
     [System.Web.Http.RoutePrefix("api/Employees")]
     public class EmployeesController:ApiController
     {
