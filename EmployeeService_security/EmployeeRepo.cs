@@ -24,5 +24,6 @@ namespace EmployeeService
         {
             return conn.QueryFirst<string>("SELECT Password FROM Users WHERE UserName=@UserName", new { username });
         }
+       
     }
 }
