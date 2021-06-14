@@ -13,24 +13,17 @@ using Dapper;
 
 namespace EmployeeService.Controllers
 {
-    //[EnableCorsAttribute("*","*","*")]
     [System.Web.Http.RoutePrefix("api/Employees")]
     public class EmployeesController:ApiController
     {
-        string connectionString = "Server=LAPTOP-56JBDJD6;Database=EmployeeDB; User ID=hello;Password=world";
-        private IDbConnection conn { get; set; }
-        public EmployeesController()
-        {
-            conn = new SqlConnection(connectionString);
-        }
+        
         Users user = new Users();
-        Employees employee = new Employees();
+        EmployeeRepo employeeRepo = new EmployeeRepo();
         public bool Login(string username, string password)
         {
-            user.UserName = username;
-            string userName= this.conn.QueryFirst<string>("SELECT UserName FROM Users WHERE UserName=@UserName",new { username});
-            //Console.WriteLine();
-            string passWord = this.conn.QueryFirst<string>("SELECT Password FROM Users WHERE UserName=@UserName",new {username });
+            string userName = employeeRepo.UserName(username);
+
+            string passWord = employeeRepo.Password(username);
             return (username == userName && password == passWord);
         }
         [System.Web.Http.HttpGet, System.Web.Http.Route("")]
@@ -41,9 +34,11 @@ namespace EmployeeService.Controllers
             switch(username)
             {
                case "male":
-                    return Request.CreateResponse(HttpStatusCode.OK, this.conn.Query<Employees>("SELECT*FROM Employees WHERE Gender=@Gender",new {Gender=username}));
+                    return Request.CreateResponse(HttpStatusCode.OK, 
+                        employeeRepo.conn.Query<Employees>("SELECT*FROM Employees WHERE Gender=@Gender",new {Gender=username}));
                 case "female":
-                    return Request.CreateResponse(HttpStatusCode.OK, this.conn.Query<Employees>("SELECT*FROM Employees WHERE Gender=@Gender",new {Gender=username}));
+                    return Request.CreateResponse(HttpStatusCode.OK, 
+                        employeeRepo.conn.Query<Employees>("SELECT*FROM Employees WHERE Gender=@Gender",new {Gender=username}));
                 default:
                     return Request.CreateResponse(HttpStatusCode.BadRequest, "Value for gender is INVALID");
             }
